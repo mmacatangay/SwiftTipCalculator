@@ -56,6 +56,7 @@ class ViewController: UIViewController {
         return strAnswerFormat
     }
     
+    //Displays Text in TipCalculated label
     func showTipCalculated(tipCalculated : NSString) -> Void {
         lblTipCalculated.text = "Tip: $\(tipCalculated)"
     }
