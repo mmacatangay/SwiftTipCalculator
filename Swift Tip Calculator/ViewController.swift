@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func btnCalculate(sender: UIButton) {
-        calculateTip()
+        showTipCalculated(tip())
     }
     
 
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     }
   
     //Calculate tip
-    func calculateTip() -> Bool {
+    func tip() -> NSString {
         mealCost = txtMealCost.text
         tipPercentage = txtTip.text
         
@@ -53,9 +53,11 @@ class ViewController: UIViewController {
         
         var strAnswerFormat : NSString = NSString(format: "%0.2f", answer)
         
-        lblTipCalculated.text = "Tip: $\(strAnswerFormat)"
-        
-        return true
+        return strAnswerFormat
+    }
+    
+    func showTipCalculated(tipCalculated : NSString) -> Void {
+        lblTipCalculated.text = "Tip: $\(tipCalculated)"
     }
 }
 
